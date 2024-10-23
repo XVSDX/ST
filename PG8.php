@@ -1,3 +1,5 @@
+http://localhost:8080/count.php
+
 <?php
 
 $countFile = 'visitor_count.txt';
