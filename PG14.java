@@ -1,4 +1,4 @@
-package dowhile;
+package Test;
 public class SumOfNumbers {
 public static void main(String[] args) {
 int i = 1, sum = 0;
@@ -21,7 +21,7 @@ public static int calculateSum(int start, int end) {
 }
 
 
-package dowhile;
+package Test;
 import org.junit.Assert;
 import org.junit.Test;
 public class SumOfNumbersTest {
