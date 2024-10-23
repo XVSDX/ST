@@ -1,4 +1,4 @@
-package forloop;
+package Test;
 public class FibonacciSeries {
 	public static void main(String[] args)
 {
@@ -36,42 +36,40 @@ public class FibonacciSeries {
 
 
 
-package forloop;
+package Test;
 
 import org.junit.Assert;
 import org.junit.Test;
-public class FibonacciSeriesTest {
-@Test
-public void testFibonacciSeriesWithLimit5() {
-int[] expectedOutput = {0, 1, 1, 2, 3};
-int limit = 5;
-int[] actualOutput = FibonacciSeries.generateFibonacciSeries(limit);
-Assert.assertEquals(actualOutput, expectedOutput);
-}
-@Test
-public void testFibonacciSeriesWithLimit10()
-{
-int[] expectedOutput = {0, 1, 1, 2, 3, 5, 8,13, 21, 34};
-int limit = 10;
-int[] actualOutput = FibonacciSeries.generateFibonacciSeries(limit);
-Assert.assertEquals(actualOutput,expectedOutput);
-}
-@Test
-public void testFibonacciSeriesWithLimit1() {
-int[] expectedOutput = {0};
-int limit = 1;
-int[] actualOutput = FibonacciSeries.generateFibonacciSeries(limit);
-Assert.assertEquals(actualOutput,
-expectedOutput);
-}
-@Test
-public void
-testFibonacciSeriesWithNegativeLimit() {
-int[] expectedOutput = {};
 
-int limit = -5;
-int[] actualOutput =FibonacciSeries.generateFibonacciSeries(limit);
-Assert.assertEquals(actualOutput,
-expectedOutput);
-}
+public class FibonacciSeriesTest {
+
+    @Test
+    public void testFibonacciSeriesWithLimit5() {
+        int[] expectedOutput = {0, 1, 1, 2, 3};
+        int limit = 5;
+        int[] actualOutput = FibonacciSeries.generateFibonacciSeries(limit);
+        Assert.assertArrayEquals(expectedOutput, actualOutput);
+    }
+
+    @Test
+    public void testFibonacciSeriesWithLimit10() {
+        int[] expectedOutput = {0, 1, 1, 2, 3, 5, 8, 13, 21, 34};
+        int limit = 10;
+        int[] actualOutput = FibonacciSeries.generateFibonacciSeries(limit);
+        Assert.assertArrayEquals(expectedOutput, actualOutput);
+    }
+
+    @Test
+    public void testFibonacciSeriesWithLimit1() {
+        int[] expectedOutput = {0};
+        int limit = 1;
+        int[] actualOutput = FibonacciSeries.generateFibonacciSeries(limit);
+        Assert.assertArrayEquals(expectedOutput, actualOutput);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testFibonacciSeriesWithNegativeLimit() {
+        int limit = -5;
+        FibonacciSeries.generateFibonacciSeries(limit); // This should throw an exception
+    }
 }
