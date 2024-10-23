@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 public class pg10 {
 public static void main(String[] args) {
-WebDriver driver = new ChromeDriver();
+WebDriver driver = new ChromeDriver()
 driver.manage().window().maximize();
 // URL launch
 driver.get("D:\\d.html");
